@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 
 const App = () => {
 	return (
@@ -13,4 +13,4 @@ const App = () => {
 	)
 }
 
-export default App;
+export default App
