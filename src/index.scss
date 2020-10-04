@@ -5,6 +5,7 @@
 	--secondary-color: #FFA500;
 	--tertiary-color: #FFFFFF;
 	--quaternary-color: #000000;
+	--quinary-color: #9C9D9D;
 }
 
 * {
@@ -12,6 +13,7 @@
 	padding: 0;
 	margin: 0;
 	outline: none !important;
+	font-family: 'Calibri';
 }
 
 html, body, #root {
