@@ -1,0 +1,27 @@
+.Navbar {
+    height: 80px;
+    width: 100%;
+    background-color: var( --tertiary-color );
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    padding: 0px 17px;
+
+    .options-container {
+        height: 50px;
+        width: 50px;
+
+        img {
+            height: 21.72px;
+            width: 25.67px;
+        }
+    }
+}
+
+@media only screen and ( max-width: 375px ) and ( orientation: portrait ) {
+    .Navbar {
+        height: 56px;
+        padding: 0px 6px;
+
+    }
+}
