@@ -1,11 +1,11 @@
 import React from 'react'
 import './SectionHeader.scss'
 
-const SectionHeader = () => {
+const SectionHeader = props => {
     
     return (
         <div className="SectionHeader">
-            <p>Recommended Products</p>
+            <p className="ellipsis">{ props.heading }</p>
         </div>
     )
 }

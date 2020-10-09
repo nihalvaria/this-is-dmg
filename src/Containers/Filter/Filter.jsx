@@ -7,7 +7,7 @@ const Filter = () => {
     
     return (
         <div className="Filter flex">
-            <SectionHeader />
+            <SectionHeader heading={ 'Recommended Products' } />
 
             <div className="filters-container flex">
                 <SelectedFilters />
