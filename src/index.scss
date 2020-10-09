@@ -32,4 +32,9 @@ html, body, #root {
 	overflow: hidden; 
 	white-space: nowrap; 
 	text-overflow: ellipsis; 
-} 
+}
+
+.overflow-y {
+	overflow: hidden;
+	overflow-y: scroll;
+}
