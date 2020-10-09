@@ -9,7 +9,7 @@ const SortBy = () => {
             <p className="ellipsis">Sort by: </p>
             
             <div className="sort-container flex">
-                <select class="sort-dropdown">
+                <select className="sort-dropdown">
                     <option>Popularity</option>
                     <option>Lowest Price</option>
                     <option>Most Stock</option>
