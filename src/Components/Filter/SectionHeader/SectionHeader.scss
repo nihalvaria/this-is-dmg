@@ -1,3 +1,11 @@
 .SectionHeader {
-    
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+@media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
+    .SectionHeader {
+        font-size: 20px;
+    }   
 }
