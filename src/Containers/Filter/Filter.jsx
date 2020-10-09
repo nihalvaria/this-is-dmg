@@ -1,5 +1,6 @@
 import SectionHeader from 'Components/Filter/SectionHeader/SectionHeader'
 import SelectedFilters from 'Components/Filter/SelectedFilters/SelectedFilters'
+import SortBy from 'Components/Filter/SortBy/SortBy'
 import React from 'react'
 import './Filter.scss'
 
@@ -11,6 +12,7 @@ const Filter = () => {
 
             <div className="filters-container flex">
                 <SelectedFilters />
+                <SortBy />
             </div>
         </div>
     )

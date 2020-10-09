@@ -1,0 +1,46 @@
+.SortBy {
+    
+    p:first-child {
+        font-size: 16px;
+    }
+    
+    .sort-container {
+        min-width: 131px;
+        height: 32px;
+        margin-left: 8px;
+        font-size: 16px;
+        border: solid 1px var( --quaternary-color );
+        border-radius: 48px;
+        position: relative;
+
+        .sort-dropdown {
+            width: 100%;
+            height: inherit;
+            margin-left: 16px;
+            font-size: 16px;
+            border: none;
+            background-color: inherit;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            z-index: 1;
+            cursor: pointer;
+        }
+        
+        img {
+            position: absolute;
+            width: 8px;
+            height: 4.5px;
+            right: 16px;
+            z-index: 0;
+        }
+    }
+}
+
+@media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
+    .SortBy {
+        p:first-child {
+            font-size: 14px;
+        }
+    }   
+}
