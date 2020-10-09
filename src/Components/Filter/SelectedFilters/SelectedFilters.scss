@@ -1,13 +1,17 @@
 .SelectedFilters {
-    
-    p:first-child {
+    width: calc( 100% - 185px );
+    overflow: hidden;
+    justify-content: flex-start;
+
+    .selected-filters-text {
         font-size: 16px;
+        min-width: 100px;
     }
 }
 
 @media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
     .SelectedFilters {
-        p:first-child {
+        .selected-filters-text {
             font-size: 14px;
         }
     }   

@@ -14,7 +14,7 @@ const SelectedFilters = () => {
     
     return (
         <div className="SelectedFilters flex">
-            <p className="ellipsis">Selected Filters: </p>
+            <p className="selected-filters-text ellipsis">Selected Filters: </p>
             {
                 selectedFilters.map( ( filterName, key ) => {
                     return (
