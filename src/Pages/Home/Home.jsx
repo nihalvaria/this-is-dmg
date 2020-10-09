@@ -6,7 +6,7 @@ import Filter from 'Containers/Filter/Filter'
 const Home = () => {
 
 	return (
-		<div className="Home">
+		<div className="Home flex">
             <Navbar />
 			<Filter />
         </div>
