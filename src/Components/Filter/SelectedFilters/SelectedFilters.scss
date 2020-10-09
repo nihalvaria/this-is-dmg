@@ -1,0 +1,14 @@
+.SelectedFilters {
+    
+    p:first-child {
+        font-size: 16px;
+    }
+}
+
+@media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
+    .SelectedFilters {
+        p:first-child {
+            font-size: 14px;
+        }
+    }   
+}
