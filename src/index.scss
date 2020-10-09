@@ -38,3 +38,11 @@ html, body, #root {
 	overflow: hidden;
 	overflow-y: scroll;
 }
+
+.clearfix-clicker {
+	position: absolute;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+}
