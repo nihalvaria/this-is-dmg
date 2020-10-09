@@ -1,0 +1,16 @@
+.FullWidthButton {
+    width: inherit;
+    height: 48px;
+    border: 1px solid var( --quaternary-color );
+    border-radius: 48px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+
+
+@media only screen and ( max-width: 375px ) and ( orientation: portrait ) {
+    .FullWidthButton {
+        font-size: 14px;
+    }
+}
