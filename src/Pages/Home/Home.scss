@@ -3,12 +3,26 @@
     width: 100%;
     align-items: flex-start;
     background-color: var( --primary-color );
-    padding-top: 80px;
+    padding: 80px 28.5px 0px 28.5px;
 }
 
-@media only screen and ( max-width: 375px ) and ( orientation: portrait ) {
 
+@media only screen and ( max-width: 1024px ) {
     .Home {
-        padding-top: 56px;
+        padding: 80px 40.5px 0px 40.5px;
+    }
+}
+
+
+@media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
+    .Home {
+        padding: 80px 32.75px 0px 32.75px;
+    }
+}
+
+
+@media only screen and ( max-width: 375px ) and ( orientation: portrait ) {
+    .Home {
+        padding: 56px 18.5px 0px 18.5px;
     }
 }
