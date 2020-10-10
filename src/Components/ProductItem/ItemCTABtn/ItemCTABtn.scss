@@ -1,0 +1,67 @@
+.ItemCTABtn {
+    max-width: 152px;
+    height: 40px;
+    background-color: var( --secondary-color );
+    border-radius: 48px;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+
+    p {
+        margin-bottom: 3px;
+    }
+
+    img {
+        margin: 0px 6px;
+    }
+    
+    .item-cart-cta img {
+        width: 23.82px;
+        height: 21px;
+    } 
+    
+    .item-notify-cta img {
+        width: 16px;
+        height: 20px;
+    }
+}
+
+.ItemCTABtn.add {
+    background-color: var( --secondary-color );
+}
+
+.ItemCTABtn.notify {
+    background-color: var( --tertiary-color );
+    border: 2px solid var( --secondary-color );
+}
+
+
+@media only screen and ( max-width: 1024px ) {
+    .ItemCTABtn.basic {
+        max-width: 77px;
+
+        p {
+            display: none;
+        }
+    }
+}
+
+@media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
+    .ItemCTABtn.basic, .ItemCTABtn.featured {
+        max-width: 135px;
+
+        p {
+            display: block;
+        }
+    }
+}
+
+@media only screen and ( max-width: 375px ) and ( orientation: portrait ) {
+    .ItemCTABtn.featured {
+        max-width: 77px;
+
+        p {
+            display: none;
+        }
+    }
+}
