@@ -1,0 +1,23 @@
+.ItemCounter {
+    width: 120px;
+    height: 40px;
+
+    p {
+        width: calc( 100% - 80px );
+        height: inherit;
+        background-color: var( --primary-color );
+    }
+
+    img {
+        width: 40px;
+        height: inherit;
+        cursor: pointer;
+    }
+}
+
+
+@media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
+    .ItemCounter {
+        width: 126px;
+    }
+}
