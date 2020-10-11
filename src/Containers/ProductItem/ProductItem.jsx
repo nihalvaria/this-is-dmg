@@ -10,6 +10,17 @@ import { Context } from 'Context/Context'
 const ProductItem = props => {
 
     const { handleCart } = useContext( Context )
+
+    const getDiscount = () => {
+        return Math.floor( ( ( props.data.cartValue * props.data.price ) / 100 ) * props.data.discount.percentage ) 
+    }
+
+    const getTotalPrice = () => {
+        if( props.data.cartValue >= props.data.discount.minOrder ) {
+            return ( ( props.data.price * props.data.cartValue ) - getDiscount() )
+        }
+        return ( props.data.price * props.data.cartValue )
+    }
    
     return (
         <div className={ `ProductItem ${ props.data.featured ? 'featured' : 'basic flex' }` } >
@@ -46,8 +57,12 @@ const ProductItem = props => {
             
             <div className="price-total-container flex">
                 <p className="price-total">
-                    <span>{ `Total ` }<b>{ `${ props.data.currency }${ props.data.price }` }</b><br /></span>
-                    <span className="save-price-text">{ 'Save CALC!' }</span>
+                    <span>{ `Total ` }<b>{ `${ props.data.currency }${ getTotalPrice() }` }</b><br /></span>
+                    {
+                        props.data.cartValue >= props.data.discount.minOrder && (
+                            <span className="save-price-text">{ `Save ${ getDiscount() }!` }</span>
+                        )
+                    }
                 </p>
             </div>
             
