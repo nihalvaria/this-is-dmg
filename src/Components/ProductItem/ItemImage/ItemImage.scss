@@ -1,0 +1,36 @@
+.ItemImage {
+    position: relative;
+    width: 125px;
+    margin: 10px;
+
+    .product-image {
+        width: 123px;
+        max-width: 100%;
+    }
+
+    .badge {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        width: 41px;
+    }
+}
+
+
+@media only screen and ( max-width: 1024px ) {
+    .ItemImage {
+        width: 104px;
+        .badge {
+            width: 35px;
+        }   
+    }
+}
+
+
+@media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
+    .ItemImage {
+        .badge {
+            width: 28px;
+        }   
+    }
+}
