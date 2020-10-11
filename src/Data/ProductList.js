@@ -42,7 +42,7 @@ export const productList = {
         },
         {
             "id": 3,
-            "name": "Continental PremiumContact™ 6",
+            "name": "New Continental PremiumContact™ 6",
             "size": "195/55 R15 85V",
             "vehicle": "SUV",
             "productImage": "",
@@ -78,7 +78,7 @@ export const productList = {
         },
         {
             "id": 5,
-            "name": "Continental PremiumContact™ 6",
+            "name": "Search Continental PremiumContact™ 6",
             "size": "195/55 R15 85V",
             "vehicle": "SUV",
             "productImage": "",

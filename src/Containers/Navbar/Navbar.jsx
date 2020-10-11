@@ -7,9 +7,13 @@ import AccountImage from "Assets/Images/person-sharp.png"
 import CartImage from "Assets/Images/cart-sharp-nav.png"
 import SearchImage from "Assets/Images/search.png"
 import NotificationImage from "Assets/Images/active.png"
+import { useContext } from 'react'
+import { Context } from 'Context/Context'
 
 
 const Navbar = () => {
+
+    const { searchQuery, setSearchQuery } = useContext( Context )
 
     const navSideItems = [
         {
@@ -35,7 +39,7 @@ const Navbar = () => {
                 <img src={ OptionsImage } alt="options-img" />
             </div>
             <div className="search-container flex">
-                <input type="text" placeholder="Search"/>
+                <input type="text" placeholder="Search" onChange={ e => setSearchQuery( e.target.value ) } value={ searchQuery }  />
                 <img src={ SearchImage } alt="search-img" />
             </div>
             <div className="nav-side-items-container flex">

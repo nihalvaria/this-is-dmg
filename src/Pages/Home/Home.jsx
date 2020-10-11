@@ -5,9 +5,12 @@ import Filter from 'Containers/Filter/Filter'
 import FullWidthButton from 'Components/Common/FullWidthButton/FullWidthButton'
 import ProductItem from 'Containers/ProductItem/ProductItem'
 
-import { productList } from 'Data/ProductList'
+import { useContext } from 'react'
+import { Context } from 'Context/Context'
 
 const Home = () => {
+
+	const { featuredProducts, basicProducts } = useContext( Context )
 
 	return (
 		<div className="Home flex">
@@ -15,19 +18,15 @@ const Home = () => {
 			<Filter />
 			<div className="featured-list flex">
 				{
-					productList[ 'products' ].map( item => {
-						if( item.featured ) {
+					featuredProducts.map( item => {
 							return <ProductItem key={ item.id } data={ item } />
-						}
 					} )
 				}
 			</div>
 			<div className="product-list flex">
 				{
-					productList[ 'products' ].map( item => {
-						if( !item.featured ) {
+					basicProducts.map( item => {
 							return <ProductItem key={ item.id } data={ item } />
-						}
 					} )
 				}
 			</div>
