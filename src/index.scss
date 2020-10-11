@@ -25,15 +25,6 @@ html, body, #root {
 	overflow-x: hidden;
 }
 
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: transparent;
-}
-
 .flex {
 	display: flex;
 	justify-content: center;
