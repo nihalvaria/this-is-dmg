@@ -1,4 +1,5 @@
 .ItemCTABtn {
+    width: 152px;
     max-width: 152px;
     height: 40px;
     background-color: var( --secondary-color );
@@ -38,7 +39,7 @@
 
 @media only screen and ( max-width: 1024px ) {
     .ItemCTABtn.basic {
-        max-width: 77px;
+        width: 77px;
 
         p {
             display: none;
@@ -46,9 +47,10 @@
     }
 }
 
+
 @media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
     .ItemCTABtn.basic, .ItemCTABtn.featured {
-        max-width: 135px;
+        width: 135px;
 
         p {
             display: block;
@@ -56,9 +58,10 @@
     }
 }
 
+
 @media only screen and ( max-width: 375px ) and ( orientation: portrait ) {
     .ItemCTABtn.featured {
-        max-width: 77px;
+        width: 77px;
 
         p {
             display: none;
