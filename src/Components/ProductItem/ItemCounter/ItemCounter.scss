@@ -3,7 +3,7 @@
     height: 40px;
 
     p {
-        width: calc( 100% - 80px );
+        width: 40px;
         height: inherit;
         background-color: var( --primary-color );
     }
@@ -19,5 +19,9 @@
 @media only screen and ( max-width: 768px ) and ( orientation: portrait ) {
     .ItemCounter {
         width: 126px;
+
+        p {
+            width: 46px;  
+        }
     }
 }
