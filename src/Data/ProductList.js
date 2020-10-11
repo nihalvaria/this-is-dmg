@@ -90,12 +90,12 @@ export const productList = {
             "approvedBy": aprovedBadge,
             "currency": "₪",
             "price": "340",
-            "stock": 0,
+            "stock": 5,
             "stockUpdateTime": "1 week",
             "featured": null,
             "discount": {
-                "minOrder": 8,
-                "percentage": 15
+                "minOrder": 3,
+                "percentage": 25
             },
             "cartValue": 0
         },
