@@ -1,34 +1,200 @@
 .ProductItem {
-    display: grid;
     background-color: var( --tertiary-color );
     margin-bottom: 16px;
+    position: relative;
+
+    .feature-tab {
+        top: -12px;
+        left: 0;
+        height: 24px;
+        background-color: var( --secondary-color );
+        position: absolute;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 0 18px;
+    }
+
+   .product-name {
+       font-weight: bold;
+       text-decoration: underline;
+   }
+
+    .product-desc {
+        font-size: 16px;
+    }
+
+    .approved-badge-image {
+        width: 64px;
+    }
+
+    .price-one {
+        font-size: 16px;
+    }
+
+    .price-total {
+        font-size: 16px;
+
+        b {
+            font-size: 20px;
+        }
+
+        .save-price-text {
+            color: var( --senary-color );
+        }
+    }
 }
 
 .ProductItem.basic {
     width: inherit;
     height: 80px;
+    justify-content: space-evenly;
+    
+    .product-name {
+        font-size: 16px;
+    }
+
+    .price-one-container {
+        width: 7%;
+    }
+
+    .price-total-container, .ItemStock {
+        width: 10%;
+        overflow: hidden;
+    }
+    
+    .product-name, .ItemCounter, .product-desc-container {
+        width: 15%;
+        overflow: hidden;
+    }
+}
+
+
+.ProductItem.featured:not(:first-child) {
+    margin-left: 16px;
 }
 
 .ProductItem.featured {
-    width: 50%;
+    width: calc( 50vw - 36.5px );
     height: 175px;
+    display: grid;
+    padding: 10px 15px;
+    place-items: center;
+    margin-top: 16px;
+
+    .ItemImage {
+        grid-area: img;
+        place-self: center start;
+    }
+
+    .product-name {
+        font-size: 24px;
+        grid-area: name;
+        place-self: center start;
+    }
+    
+    .product-desc-container {
+        grid-area: desc;
+        place-self: center start;
+    }
+    
+    .approved-badge-image {
+        grid-area: badge;
+        place-self: center start;
+        width: 64px;
+    }
+    
+    .ItemStock {
+        grid-area: stock;
+        place-self: center start;
+    }
+    
+    .price-one-container {
+        grid-area: price;
+        place-self: center start;
+    }
+    
+    .price-total-container {
+        grid-area: total;
+        place-self: center start;
+    
+        .price-total .save-price-text {
+            display: none;
+        }
+    }
+    
+    .ItemCounter {
+        grid-area: counter;
+        place-self: center start;
+    }
+    
+    .ItemCTABtn {
+        grid-area: cta;
+        place-self: center end;
+    }
+    
+    grid-template-columns: 30% 17.5% 17.5% 17.5% 17.5%;
+    grid-template-rows: 30% 20% 18% 32%;
+
+    grid-template-areas: 
+        "img name name name name"
+        "img badge desc stock total"
+        "img badge desc price total"
+        "img counter counter cta cta"
+    ;
+
 }
 
 
 @media only screen and ( max-width: 1024px ) {
-
+    
     .ProductItem {
         margin-bottom: 16px;
     }
-
+    
     .ProductItem.basic {
         width: inherit;
         height: 80px;
     }
-
+    
     .ProductItem.featured {
-        width: calc( 50% - 8px );
+        width: calc( 50vw - 48px);
         height: 175px;
+        padding: 0px;
+        
+        .product-name {
+            font-size: 20px;
+        }
+
+        .ItemImage {
+            width: 104.88px;
+        }
+        
+        .product-desc, .price-one, .price-total, .ItemStock {
+            font-size: 14px;
+        }
+
+        .ItemStock, .price-one-container {
+            place-self: center;
+        }
+
+        .ItemStock .item-stock-con p{
+            font-size: 14px;
+        }
+        
+        grid-template-columns: 28% 18.5% 17.5% 16.5% 16.5%;
+        grid-template-rows: 30% 20% 18% 32%;
+    }
+}
+
+
+@media only screen and ( max-width: 1023px ) {
+    .ProductItem.featured {
+        min-width: 280px;
+        height: 236px;
+
+        .feature-tab {
+            font-size: 12px;
+        }
     }
 }
 
@@ -36,30 +202,137 @@
 
     .ProductItem {
         margin-bottom: 16px;
-    }
 
+        .product-desc {
+            font-size: 14px;
+        }
+
+        .price-one, .price-total {
+            font-size: 14px;
+        }
+    }
+    
     .ProductItem.basic {
-        width: inherit;
-        height: 80px;
-    }
+        width: calc( 50% - 16px );
+        height: 158px;
+        padding: 15px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        
+        .approved-badge-image {
+            width: 44px;
+        }
 
+        .price-one-container {
+            width: 20%;
+            max-height: 32%;
+
+            .price-one {
+                flex-direction: column;
+            }
+        }
+        
+        .price-total-container, .ItemStock {
+            width: 25%;
+            overflow: hidden;
+            max-height: 32%;
+        }
+        
+        .product-name, .ItemCounter, .product-desc-container, .ItemCTABtn {
+            width: 50%;
+            max-height: 32%;
+            overflow: hidden;
+        }
+
+        .product-name {
+            order: 1;
+        }
+
+        .product-desc-container {
+            order: 2;
+        }
+
+        .approved-badge-image {
+            order: 3;
+        }
+
+        .ItemStock {
+            order: 4;
+            width: 35%;
+        }
+
+        .price-one-container {
+            order: 5;
+            height: 32%;
+        }
+        
+        .price-total-container {
+            order: 6;
+            width: 30%;
+            height: 32%;
+        }
+        
+        .ItemCounter {
+            order: 7;
+        }
+
+        .ItemCTABtn {
+            order: 8;
+        }
+    }
+    
     .ProductItem.featured {
-        height: 175px;
+        height: 248px;
+        padding: 15px;
+            
+        .approved-badge-image {
+            width: 39.02px;
+        }
+
+        .product-name {
+            font-size: 16px;
+        }
+
+        .price-one-container .price-one {
+            flex-direction: column;
+        }
+
+        .ItemStock {
+            place-self: center start;
+        }
+
+        grid-template-columns: 30% 17.5% 17.5% 17.5% 17.5%;
+        grid-template-rows: 30% 20% 18% 32%;
+    
+        grid-template-areas: 
+            "img img name name name"
+            "img img badge desc desc"
+            "img img stock price total"
+            "counter counter . cta cta"
+        ;
     }
 }
 
-@media only screen and ( max-width: 375px ) and ( orientation: portrait ) {
+@media only screen and ( max-width: 700px ) and ( orientation: portrait ) {
 
     .ProductItem {
         margin-bottom: 16px;
     }
 
     .ProductItem.basic {
-        width: inherit;
-        height: 80px;
+        width: 100%;
+        height: 158px;
     }
 
     .ProductItem.featured {
-        height: 175px;
+        margin-bottom: 0px;
+        height: 236px;
+        position: relative;
+
+        .ItemImage {
+            width: 104.88px;
+            position: absolute;
+            left: -20px;
+        }
     }
 }
