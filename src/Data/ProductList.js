@@ -20,7 +20,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 2,
@@ -38,7 +39,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 3,
@@ -56,7 +58,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 4,
@@ -74,7 +77,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 5,
@@ -92,7 +96,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 6,
@@ -110,7 +115,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 7,
@@ -128,7 +134,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 8,
@@ -146,7 +153,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 9,
@@ -164,7 +172,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         },
         {
             "id": 10,
@@ -182,7 +191,8 @@ export const productList = {
             "discount": {
                 "minOrder": 8,
                 "percentage": 15
-            }
+            },
+            "cartValue": 0
         }
     ]
 }

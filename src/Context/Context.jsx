@@ -9,14 +9,20 @@ const ContextProvider = (props) => {
 
     const [ basicProducts, setBasicProducts ] = useState( [] )
     const [ featuredProducts, setFeaturedProducts ] = useState( [] )
+    const [ allProducts, setAllProducts ] = useState( [] )
 
     const [ searchQuery, setSearchQuery ] = useState( '' )
-
+ 
     useEffect( () => {
         const products = productList[ 'products' ]
-        setBasicProducts( () => products.filter( item => !item.featured ) )
-        setFeaturedProducts( () => products.filter( item => item.featured ) )
+        setAllProducts( products )
     }, [] )
+
+    useEffect( () => {
+        setBasicProducts( () => allProducts.filter( item => !item.featured ) )
+        setFeaturedProducts( () => allProducts.filter( item => item.featured ) )
+    }, [ allProducts ] )
+    
 
     const searchFilter = product => {
         return product.name.toLowerCase().indexOf( searchQuery ) > -1 
@@ -28,9 +34,35 @@ const ContextProvider = (props) => {
                 setBasicProducts( searchFiltered )
             }
             else {
-                setBasicProducts( () => productList[ 'products' ].filter( item => !item.featured ) )
+                setBasicProducts( () => allProducts.filter( item => !item.featured ) )
             }
     }, [ searchQuery ] )
+
+    const handleCart = ( type, id ) => {
+        const [ product ] = allProducts.filter( item => item.id === id )
+        
+        setAllProducts( prevState => {
+            const newState = prevState.map( item => {
+                if( item.id === id ) {
+                    if( type === 'add' && product.cartValue < product.stock ) {
+                        return ({
+                            ...item,
+                            cartValue: item.cartValue + 1
+                        })
+                    }
+                    else if( type === 'remove' && product.cartValue > ( product.stock && 0 ) ) {
+                        return ({
+                            ...item,
+                            cartValue: item.cartValue - 1
+                        })
+                    }
+                }
+                return item
+           
+            } )
+            return newState
+        } )
+    }   
 
     return (
         <Context.Provider value={
@@ -38,7 +70,8 @@ const ContextProvider = (props) => {
                 basicProducts,
                 featuredProducts,
                 searchQuery,
-                setSearchQuery
+                setSearchQuery,
+                handleCart
             }
         } >
             { props.children }

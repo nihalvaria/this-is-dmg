@@ -8,7 +8,7 @@ const ItemCounter = props => {
     return (
         <div className="ItemCounter flex" >
             <img src={ AddImage } alt="add-cart" onClick={ () => props.handleCart( "add" ) } />
-            <p className="flex" >{ '4' }</p>
+            <p className="flex" >{ props.data.cartValue }</p>
             <img src={ RemoveImage } alt="remove-cart" onClick={ () => props.handleCart( "remove" ) } />
         </div>
     )

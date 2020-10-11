@@ -1,18 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./ProductItem.scss"
 import ItemCTABtn from 'Components/ProductItem/ItemCTABtn/ItemCTABtn'
 import ItemCounter from 'Components/ProductItem/ItemCounter/ItemCounter'
 import ItemImage from 'Components/ProductItem/ItemImage/ItemImage'
-
-import ApprovedBadgeImage from 'Assets/Images/appr.png'
 import ItemStock from 'Components/ProductItem/ItemStock/ItemStock'
+
+import { Context } from 'Context/Context'
 
 const ProductItem = props => {
 
-    const handleCart = type => {
-        console.log( type, props.data.id );
-    }
-
+    const { handleCart } = useContext( Context )
+   
     return (
         <div className={ `ProductItem ${ props.data.featured ? 'featured' : 'basic flex' }` } >
             {
@@ -26,7 +24,7 @@ const ProductItem = props => {
             
             <p className="product-name">{ props.data.name }</p>
             
-            <img src={ ApprovedBadgeImage } alt="approved-badge" className="approved-badge-image" />
+            <img src={ props.data.approvedBy } alt="approved-badge" className="approved-badge-image" />
             
             <div className="product-desc-container flex">
                 <p className="product-desc">
@@ -44,7 +42,7 @@ const ProductItem = props => {
                 </p>
             </div>
             
-            <ItemCounter handleCart={ handleCart } />
+            <ItemCounter handleCart={ type => handleCart( type, props.data.id ) } data={ props.data } />
             
             <div className="price-total-container flex">
                 <p className="price-total">
